@@ -6,6 +6,9 @@ const appId = 'kiripostapp';
 const redirectUri = 'http://localhost:3000/callback';
 
 function App() {
+  // Set a cookie accessible across all subdomains of example.com
+  document.cookie = "mycookie=myvalue; domain=.vercel.app; path=/; secure; samesite=none";
+
   const [authorizationCode, setAuthorizationCode] = useState(null);
   const [users, setUsers] = useState([]);
   const [accessToken, setAccessToken] = useState(null);
